@@ -1,5 +1,16 @@
 #imagenes-carrusel{
-    height: 550px;
-    width: 90%;
-    
+    height: 600px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.carousel-inner{
+    justify-content: center;
+    text-align: center;
+}
+#bio-carrusel{
+    color: black;
+}
+h3{
+    font-size: 22px;
 }

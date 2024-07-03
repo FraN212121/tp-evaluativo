@@ -7,7 +7,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -18,14 +19,18 @@ import {MatMenuModule} from '@angular/material/menu';
     CommonModule,
     MatIconModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatGridListModule,
+    MatListModule
   ],
   exports:[
     NavbarComponent,
     FooterComponent,
     MatIconModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatGridListModule,
+    MatListModule
   ]
 })
 export class SharedModule { }

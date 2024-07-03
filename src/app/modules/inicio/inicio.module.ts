@@ -5,8 +5,9 @@ import { InicioRoutingModule } from './inicio-routing.module';
 import { CardsComponent } from './components/cards/cards.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { CarruselComponent } from './components/carrusel/carrusel.component';
-
-
+import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,10 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
   ],
   imports: [
     CommonModule,
-    InicioRoutingModule
+    InicioRoutingModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
     InicioComponent,
