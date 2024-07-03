@@ -22,6 +22,13 @@ height: 130px;
     mat-toolbar {
       background-color: rgb(0, 188, 212);
     }
+    #menuInicio {
+      display: none;
+    }
+    
+    #menuProductos {
+      display: none;
+    }
   }
   
 

@@ -1,8 +1,8 @@
 <mat-toolbar id="navegador">
-  <button mat-icon-button class="example-icon" id="menuSecciones">
-      <mat-icon>menu</mat-icon>
-  </button>
-  <mat-menu>
+  <button mat-icon-button class="example-icon" id="menuSecciones" [matMenuTriggerFor]="seccion">
+    <mat-icon>menu</mat-icon>
+</button>
+  <mat-menu #seccion="matMenu">
       <button mat-menu-item>Inicio</button>
       <button mat-menu-item>Productos</button>
   </mat-menu>
