@@ -1,30 +1,40 @@
 <mat-toolbar id="navegador">
   <button mat-icon-button class="example-icon" id="menuSecciones" [matMenuTriggerFor]="seccion">
     <mat-icon>menu</mat-icon>
-</button>
+  </button>
   <mat-menu #seccion="matMenu">
-      <button mat-menu-item>Inicio</button>
-      <button mat-menu-item>Productos</button>
+    <button mat-menu-item>Inicio</button>
+    <button mat-menu-item>Productos</button>
+
   </mat-menu>
-  <a><img src="./assets/logo-bueno.png" id="logo"></a>
+  <a routerLink="/inicio"><img src="./assets/logo-rosa.png" height="100%" id="logo"></a>
   <!-- Inicio de la pagina -->
-  <button mat-button  id="menuInicio">Inicio</button>
+  <button mat-button id="menuInicio" routerLink="/inicio">Inicio</button>
 
   <!-- Productos -->
-  <button mat-button id="menuProductos">Productos</button>
+  <button mat-button id="menuProductos" routerLink="/servicios">Servicios</button>
 
-      <!-- Botones con iconos -->
+  <!-- Contacto -->
+  <button mat-button id="menuProductos" routerLink="/contacto">Contacto</button>
+
+  <!-- Botones con iconos -->
   <span class="example-spacer"></span>
 
-    <!-- Inicio de sesion y el registro del nuevo usuario -->
-  <button mat-button ><mat-icon>account_circle</mat-icon></button>
-  <mat-menu>
-      <button mat-menu-item routerLink="/registro">Registrarse</button>
-      <button mat-menu-item routerLink="/inicio-sesion">Iniciar sesion</button>
+  <!-- Inicio de sesion y el registro del nuevo usuario -->
+  <button mat-button [matMenuTriggerFor]="usuario"><mat-icon>account_circle</mat-icon></button>
+  <!-- Menu desplegable para manejar todo el acceso de lo susuarios en la pagina -->
+  <mat-menu #usuario="matMenu">
+    <button mat-menu-item (click)="Iniciar()" *ngIf="logueado" routerLink="/registro">Registrarse</button>
+    <button mat-menu-item (click)="Iniciar()" *ngIf="logueado" routerLink="/inicio-sesion">Iniciar sesion</button>
+    <button mat-menu-item (click)="Cerrarsesion()" *ngIf="deslogueado">Cerrar Sesion</button>
   </mat-menu>
 
-    <!-- Carrito -->
+  <!-- Carrito -->
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>shopping_cart</mat-icon>
+    <mat-icon>shopping_cart</mat-icon>
   </button>
+
+  <!-- label para el modo oscuro -->
+  <label for="toggle" id="label_toggle"><i class="fa-regular fa-moon" style="color: white;"></i></label>
+  <input type="checkbox" id="toggle" (click)="cambiarFondo()">
 </mat-toolbar>

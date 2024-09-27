@@ -1,7 +1,8 @@
 export interface Servicios {
-    id:string;
+    idServicio:string;
     nombreServicio:string;
     costo:string;
     funcion:string;
     imagen:string;
+    alt:string;
 }

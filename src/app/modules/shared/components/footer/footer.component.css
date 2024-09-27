@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&family=M+PLUS+1+Code:wght@100..700&display=swap');
 #footer{
-    background-color: rgb(0, 188, 212);
+    background-color: #d68cce;
     padding-bottom: 25px;
+    margin-top: 25px;
+    width: 100%;
 }
-
+*{
+    font-family: "M PLUS 1 Code", monospace;
+    color: white;
+}
+mat-list{
+    font-family: "M PLUS 1 Code", monospace;
+}
 svg{
     color: white;
     padding: 2px;
 }
-

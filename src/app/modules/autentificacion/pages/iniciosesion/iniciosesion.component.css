@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&family=M+PLUS+1+Code:wght@100..700&display=swap');
+
+.container{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    font-family: "M PLUS 1 Code", monospace;
+    background-color: #d68ccf9c;
+    width: 50%;
+    border-radius: 15px;
+}
+h1{
+    font-family: "M PLUS 1 Code", monospace;
+}
+
+.boton{
+    width: 120px;
+    margin: auto;
+   color: #d68cce;
+}
+
+input:focus {
+   
+    font-family: "M PLUS 1 Code", monospace;
+  }
+  
+

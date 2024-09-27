@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 //COMPONENTES DEL MATERIAL
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatListModule} from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,10 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatMenuModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    AppRoutingModule
   ],
-  exports:[
+  exports: [
     NavbarComponent,
     FooterComponent,
     MatIconModule,
