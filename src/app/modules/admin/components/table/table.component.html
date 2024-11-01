@@ -1,0 +1,192 @@
+<!-- TABLA DE PRODUCTOS -->
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Funcion</th>
+            <th scope="col">Alt</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let servicios of collectionServicios">
+            <th scope="row">1</th>
+
+            <td>
+                <img src="{{servicios.imagen}}" alt="{{servicios.alt}}">
+            </td>
+            <td>{{servicios.nombreServicio}}</td>
+            <td>{{servicios.costo}}</td>
+            <td>{{servicios.funcion}}</td>
+
+
+            <!-- acciones -->
+            <td>
+                <button id="btn-edit" title="Editar" type="button" class="btn btn-outline-warning"
+                    data-bs-toggle="modal" data-bs-target="#editarServicio">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+            <td>
+                <button id="btn-delete" title="Eliminar" type="button" class="btn btn-outline-danger"
+                    data-bs-toggle="modal" data-bs-target="#eliminarServicio" (click)="mostrarBorrar(servicios)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- BOTON PARA AGREGAR NUEVOS PRODUCTOS -->
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregarServicios">
+    Agregar un nuevo servicios!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="agregarServicios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- titulo del modal -->
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese un nuevo servicios </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- cuerpo del modal -->
+            <div [formGroup]="servicio" class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el nombre del servicios:</label>
+                    <input class="form-control" type="text" formControlName="nombre" placeholder="Ej: zapatillas">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el precio del servicios:</label>
+                    <input class="form-control" type="number" formControlName="precio" placeholder="Ej: ...">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese la descripcion del servicios:</label>
+                    <input class="form-control" type="text" formControlName="descripcion" placeholder="Ej: ...">
+                </div>
+                
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el tipo de servicio:</label>
+                    <select class="form-control" formControlName="categoria" class="form-select">
+                        <option selected>Elija una opcion</option>
+                        <option value="distancia">Sesiones a distancia</option>
+                        <option value="persona">Sesiones en persona</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese la imagen del servicio:</label>
+                    <!-- <input class="form-control" type="text" formControlName="imagen" placeholder="Ej: ..."> -->
+                    <!-- 
+                    type="file": recibe archivos
+                    accept="imagen/*": acepte todo tipo de extensiones (jpg,png,etc)
+                    ((change)="cargarImagen($event)": ejecuta el evento cargarImagen que definimos en el table.ts
+                     -->
+                    <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
+
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el textp alternativo del servicio:</label>
+                    <input class="form-control" type="text" formControlName="alt" placeholder="Ej: ...">
+                </div>
+            </div>
+ 
+              <!-- ACCIONES DEL MODAL -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="agregarServicio()"
+                    data-bs-dismiss="modal">Guardar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL PARA EDITAR-->
+<div class="modal fade" id="editarServicios" *ngFor="let servicioEdit of collectionServicios" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- titulo del modal -->
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese un nuevo servicio </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- cuerpo del modal -->
+            <div [formGroup]="servicio" class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el nombre del servicio:</label>
+                    <input class="form-control" type="text" formControlName="nombre"
+                        placeholder="{{servicioEdit.nombreServicio}}">
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el precio del servicio:</label>
+                    <input class="form-control" type="number" formControlName="precio"
+                        placeholder="{{servicioEdit.costo}}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese la descripcion del servicio:</label>
+                    <input class="form-control" type="text" formControlName="funcion"
+                        placeholder="{{servicioEdit.funcion}}">
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese la imagen del servicio:</label>
+                    <input class="form-control" type="text" formControlName="imagen"
+                        placeholder="{{servicioEdit.imagen}}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el texto alternativo del servicio:</label>
+                    <input class="form-control" type="text" formControlName="alt" placeholder="{{servicioEdit.costo}}">
+                </div>
+            </div>
+
+              <!-- ACCIONES DEL MODAL -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="agregarServicio()"
+                    data-bs-dismiss="modal">Guardar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal para eliminar producto -->
+<div class="modal fade" *ngIf="modalVisibleServicio" id="eliminarServicio" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Estas seguro de eliminar el Servicio?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{{servicioSeleccionado.imagen}}" alt="{{servicioSeleccionado.alt}}">
+            </div>
+
+            <!-- Acciones -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                    (click)="borrarServicio()">Eliminar</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

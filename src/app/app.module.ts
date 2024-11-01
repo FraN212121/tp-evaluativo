@@ -16,10 +16,12 @@ import { environment } from 'src/environments/environment'; // vincula a la BD c
 import { AngularFireModule } from '@angular/fire/compat'; // trabaja con las colecciones de informacion
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // trabaja con la autentificacion
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { CardComponent } from './app/modules/servicios/card/card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardComponent
   ],
   imports: [
     // COMPONENTES GLOBALES

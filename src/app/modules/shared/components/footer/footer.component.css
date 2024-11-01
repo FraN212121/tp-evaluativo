@@ -3,15 +3,19 @@
     background-color: #d68cce;
     padding-bottom: 25px;
     margin-top: 25px;
-    width: 100%;
+    font-family: "M PLUS 1 Code", monospace;
+    color: white;
 }
+
 *{
     font-family: "M PLUS 1 Code", monospace;
     color: white;
 }
-mat-list{
+#footer mat-list-item .mat-list-text{
     font-family: "M PLUS 1 Code", monospace;
 }
+
+
 svg{
     color: white;
     padding: 2px;

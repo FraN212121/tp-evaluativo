@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/modules/autentificacion/service/auth.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
 logueado = true; // booleana para manejo de registro y el inicio de sesion
 deslogueado = false; // booleana para manejon de cierre de sesion
+
 
 
 constructor(

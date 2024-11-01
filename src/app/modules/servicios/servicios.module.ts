@@ -8,10 +8,14 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import {MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { CardComponent } from './components/card/card.component';
+import { CardDistanciaComponent } from './components/card-distancia/card-distancia.component';
 
 @NgModule({
   declarations: [
-    ServiciosComponent
+    ServiciosComponent,
+    CardComponent,
+    CardDistanciaComponent
   ],
   imports: [
     CommonModule,

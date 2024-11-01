@@ -2,20 +2,28 @@
   <button mat-icon-button class="example-icon" id="menuSecciones" [matMenuTriggerFor]="seccion">
     <mat-icon>menu</mat-icon>
   </button>
-  <mat-menu #seccion="matMenu">
-    <button mat-menu-item>Inicio</button>
-    <button mat-menu-item>Productos</button>
-
+  <mat-menu #seccion="matMenu"> 
+    <button mat-menu-item routerLink="/inicio">Inicio</button>
+    <button mat-menu-item [matMenuTriggerFor]="servicios">servicios</button>
   </mat-menu>
+
+
   <a routerLink="/inicio"><img src="./assets/logo-rosa.png" height="100%" id="logo"></a>
   <!-- Inicio de la pagina -->
   <button mat-button id="menuInicio" routerLink="/inicio">Inicio</button>
 
   <!-- Productos -->
-  <button mat-button id="menuProductos" routerLink="/servicios">Servicios</button>
+  <button mat-button [matMenuTriggerFor]="servicios" id="menuServicios">Servicios</button>
+  <mat-menu #servicios="matMenu">
+    <button mat-menu-item routerLink="/card">Servicios presenciales.</button>
+    <button mat-menu-item routerLink="/card-distancia">Servicios a distancia.</button>
+  </mat-menu>
 
   <!-- Contacto -->
   <button mat-button id="menuProductos" routerLink="/contacto">Contacto</button>
+
+  <!-- Admin -->
+  <button mat-button routerLink="/admin" id="admin">Admin</button>
 
   <!-- Botones con iconos -->
   <span class="example-spacer"></span>
