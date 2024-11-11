@@ -7,10 +7,10 @@ import { Servicios } from 'src/app/models/servicios';
   styleUrls: ['./servicios.component.css']
 })
 export class ServiciosComponent {
-  public info: Servicios [];
+ /* public info: Servicios [];*/
 
   constructor() {
-    this.info = [
+   /* this.info = [
       {
         idServicio: "",
         nombreServicio: "Tameana",
@@ -56,6 +56,9 @@ export class ServiciosComponent {
         imagen: "https://lenormind.com/wp-content/uploads/2022/03/STORE_Mesa-Infinity-ok.jpg",
         alt: ''
       },
-    ]
+    ]*/
   }
+  servicioagregar() {
+    alert("El carrito está en mantenimiento.");
+}
 }

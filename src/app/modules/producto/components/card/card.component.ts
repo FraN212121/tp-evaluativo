@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { Servicios } from 'src/app/models/servicios';
 import { CrudService } from 'src/app/modules/admin/services/crud.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -35,17 +36,24 @@ ngOnInit(): void{
 }
 
 // funcion para mostrar mas informacion de los productos 
-mostrarVer(info: Servicios){
-  // cambio estado del modal a true (ahora es visible)
-  this.modalVisible=true;
-
-  // guardo en variable seleccionado la informacion de producto elegido 
-  this.servicioSeleccionado=info;
+mostrarVer(info: Servicios) {
+  this.modalVisible = true;
+  this.servicioSeleccionado = info;
 }
 
-agregarProducto(info:Servicios){
-  this.servicioAgregado.emit(info);
-
-  this.compraVisible=true;
+servicioAnadido(servicios: Servicios) {
+  try {
+    Swal.fire({
+      title: 'Lo sentimos,',
+      text: 'Ocurrio un error, carrito en mantenimiento',
+      icon: 'info'
+    });
+  } catch (error) {
+    Swal.fire({
+      title: 'Lo sentimos,',
+      text: 'Ha ocurrido un error, carrito en mantenimiento\n' + error,
+      icon: 'error'
+    })
+  }
 }
 }

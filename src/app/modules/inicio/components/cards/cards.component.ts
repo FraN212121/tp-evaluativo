@@ -7,10 +7,10 @@ import { Servicios } from 'src/app/models/servicios';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent {
-  public info: Servicios [];
+  /*public info: Servicios [];*/
 
   constructor() {
-    this.info = [
+   /* this.info = [
       {
         idServicio: "",
         nombreServicio: "Tameana",
@@ -35,6 +35,6 @@ export class CardsComponent {
         imagen: "https://sanandosanamos.com/wp-content/uploads/2022/11/Diseno-sin-titulo-4.jpg",
         alt: ''
       },
-    ]
+    ]*/
   }
 }

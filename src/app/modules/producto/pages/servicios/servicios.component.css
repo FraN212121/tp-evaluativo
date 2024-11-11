@@ -1,0 +1,65 @@
+    .container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-family: "M PLUS 1 Code", monospace;
+        padding: 10px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas */
+        justify-content: center;
+        gap: 15px; /* Espacio entre columnas */
+        width: 100%;
+    }
+
+    .col {
+        flex: 1 1 calc(33.33% - 30px); /* Cada tarjeta ocupará un tercio del ancho disponible */
+        max-width: 300px; /* Limita el ancho máximo de cada tarjeta */
+        box-sizing: border-box;
+    }
+
+    .texto-card {
+        color: black;
+        text-align: center;
+        font-family: "M PLUS 1 Code", monospace;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: "M PLUS 1 Code", monospace;
+    }
+
+    .contenido {
+        background-color: #d68cce;
+        border-radius: 8px;
+        padding: 10px;
+        transition: all 300ms;
+    }
+
+    .contenido:hover {
+        transform: scale(1.05);
+    }
+
+    p {
+        padding: 5px;
+    }
+
+    section {
+        display: flex;
+    }
+
+    mat-card-actions {
+        justify-content: center;
+    }
+
+    .example-button-row {
+        display: flex;
+        max-width: 600px;
+    }
+
+    #agregar {
+        background-color: #d68cce;
+        font-family: "M PLUS 1 Code", monospace;
+    }

@@ -38,7 +38,7 @@ export class CrudService {
   crearServicios(servicios: Servicios, url: string) {
     return new Promise(async (resolve, reject) => {
       try {
-        // creamos numero identificativo para el prodcuto en la BD
+        // creamos numero identificativo para el producto en la BD
         const idServicio = this.database.createId();
 
         // asignamos un ID creado al atributo idServicios de la interfaz Servicioss

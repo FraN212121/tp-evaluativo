@@ -25,7 +25,7 @@ usuarios: Usuario = {
   nombre: '',
   apellido: '',
   email: '',
-  rol: '',
+  rol: 'usuario', // todos los usuarios al registrarse 
   password: ''
 }
 

@@ -1,10 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&family=M+PLUS+1+Code:wght@100..700&display=swap');
+
 .container {
     display: flex;
-    padding: 10px;
     justify-content: center;
     text-align: center;
     font-family: "M PLUS 1 Code", monospace;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas si no hay suficiente espacio */
+    justify-content: center;
+    gap: 20px; /* Espacio entre columnas */
+    width: 100%;
+}
+
+.col {
+    flex: 1 1 calc(30% - 20px); /* Ocupa el 25% del ancho con un espacio de 20px entre columnas */
+    max-width: 350px; /* Limita el ancho máximo de cada tarjeta */
+    box-sizing: border-box;
 }
 
 .texto-card {
@@ -17,18 +32,18 @@ h1 {
     text-align: center;
     font-family: "M PLUS 1 Code", monospace;
 }
+
 .contenido {
     background-color: #d68cce;
-    width: 25%;
-    display: inline-block;
     border-radius: 8px;
     padding: 25px;
     transition: all 300ms;
-    justify-content: center;
 }
-.contenido:hover{
-transform: scale(1.05);
+
+.contenido:hover {
+    transform: scale(1.05);
 }
+
 p {
     padding: 5px;
 }

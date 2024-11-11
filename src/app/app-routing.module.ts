@@ -18,7 +18,7 @@ const routes: Routes = [
     path:"",loadChildren:()=>import('./modules/informacion/informacion.module').then(m=>m.InformacionModule)
   },
   {
-    path:"",loadChildren:()=>import('./modules/servicios/servicios.module').then(m=>m.ServiciosModule)
+    path:"",loadChildren:()=>import('./modules/producto/producto.module').then(m=>m.ProductoModule)
   },
   {
     path:"",loadChildren:()=> import ('./modules/admin/admin.module').then(m => m.AdminModule),

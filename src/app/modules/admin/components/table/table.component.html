@@ -8,7 +8,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Costo</th>
             <th scope="col">Funcion</th>
-            <th scope="col">Alt</th>
+            <th scope="col">stock</th>
             <th scope="col">Acciones</th>
         </tr>
     </thead>
@@ -22,12 +22,13 @@
             <td>{{servicios.nombreServicio}}</td>
             <td>{{servicios.costo}}</td>
             <td>{{servicios.funcion}}</td>
+            <td> {{servicios.stock}} </td>
 
 
             <!-- acciones -->
             <td>
                 <button id="btn-edit" title="Editar" type="button" class="btn btn-outline-warning"
-                    data-bs-toggle="modal" data-bs-target="#editarServicio">
+                    data-bs-toggle="modal" data-bs-target="#editarServicio" (click)="mostrarEditar(servicios)">
                     <mat-icon>edit</mat-icon>
                 </button>
             </td>
@@ -59,17 +60,17 @@
             <div [formGroup]="servicio" class="modal-body">
                 <div class="mb-3">
                     <label class="form-label">Ingrese el nombre del servicios:</label>
-                    <input class="form-control" type="text" formControlName="nombre" placeholder="Ej: zapatillas">
+                    <input class="form-control" type="text" formControlName="nombreServicio" placeholder="Ej: zapatillas">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Ingrese el precio del servicios:</label>
-                    <input class="form-control" type="number" formControlName="precio" placeholder="Ej: ...">
+                    <input class="form-control" type="number" formControlName="costo" placeholder="Ej: ...">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Ingrese la descripcion del servicios:</label>
-                    <input class="form-control" type="text" formControlName="descripcion" placeholder="Ej: ...">
+                    <input class="form-control" type="text" formControlName="funcion" placeholder="Ej: ...">
                 </div>
                 
 
@@ -77,8 +78,9 @@
                     <label class="form-label">Ingrese el tipo de servicio:</label>
                     <select class="form-control" formControlName="categoria" class="form-select">
                         <option selected>Elija una opcion</option>
+                        <option value="sesiones">Sesiones</option>
                         <option value="distancia">Sesiones a distancia</option>
-                        <option value="persona">Sesiones en persona</option>
+                        <option value="presencial">Sesiones en presencial</option>
                     </select>
                 </div>
 
@@ -98,7 +100,12 @@
                     <label class="form-label">Ingrese el textp alternativo del servicio:</label>
                     <input class="form-control" type="text" formControlName="alt" placeholder="Ej: ...">
                 </div>
+                <div class="mb-3">
+                    <label for="form-label">Ingrese su stock:</label>
+                    <input type="number" class="form-control" formControlName="stock" placeholder="Ej: 20">
+                </div>
             </div>
+            
  
               <!-- ACCIONES DEL MODAL -->
             <div class="modal-footer">
@@ -131,7 +138,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Ingrese el precio del servicio:</label>
-                    <input class="form-control" type="number" formControlName="precio"
+                    <input class="form-control" type="number" formControlName="costo"
                         placeholder="{{servicioEdit.costo}}">
                 </div>
 
@@ -144,13 +151,17 @@
 
                 <div class="mb-3">
                     <label class="form-label">Ingrese la imagen del servicio:</label>
-                    <input class="form-control" type="text" formControlName="imagen"
-                        placeholder="{{servicioEdit.imagen}}">
+                    <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
+
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Ingrese el texto alternativo del servicio:</label>
                     <input class="form-control" type="text" formControlName="alt" placeholder="{{servicioEdit.costo}}">
+                </div>
+                <div class="mb-3">
+                    <label for="form-label">Ingrese su stock:</label>
+                    <input type="number" class="form-control" formControlName="stock" placeholder="Ej: 20">
                 </div>
             </div>
 

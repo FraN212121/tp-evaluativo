@@ -4,7 +4,7 @@
   </button>
   <mat-menu #seccion="matMenu"> 
     <button mat-menu-item routerLink="/inicio">Inicio</button>
-    <button mat-menu-item [matMenuTriggerFor]="servicios">servicios</button>
+    <button mat-menu-item routerLink="/servicios">servicios</button>
   </mat-menu>
 
 
@@ -12,15 +12,17 @@
   <!-- Inicio de la pagina -->
   <button mat-button id="menuInicio" routerLink="/inicio">Inicio</button>
 
-  <!-- Productos -->
+  <!-- Productos
   <button mat-button [matMenuTriggerFor]="servicios" id="menuServicios">Servicios</button>
   <mat-menu #servicios="matMenu">
     <button mat-menu-item routerLink="/card">Servicios presenciales.</button>
     <button mat-menu-item routerLink="/card-distancia">Servicios a distancia.</button>
   </mat-menu>
+ -->
+ <button mat-button routerLink="/servicios">Servicios</button>
 
   <!-- Contacto -->
-  <button mat-button id="menuProductos" routerLink="/contacto">Contacto</button>
+  <button mat-button routerLink="/contacto">Contacto</button>
 
   <!-- Admin -->
   <button mat-button routerLink="/admin" id="admin">Admin</button>
