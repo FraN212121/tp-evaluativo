@@ -50,8 +50,12 @@ aria-hidden="true">
                 {{servicioSeleccionado.costo}}
             </div>
 
+            <div class="mb-3">
+                {{servicioSeleccionado.stock}}
+            </div>
         </div>
         <div class="modal-footer">
+            <input type="number" placeholder="Cantidad deseada del servicio/producto" [(ngModel)]="stock"> 
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="servicioAnadido(servicioSeleccionado)">Agregar al carrito!</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 

@@ -12,7 +12,7 @@ export class TableComponent {
   // creamos collecion local de productos -> la definimos como array
   collectionServicios: Servicios[] = [];
 
-
+  
   servicioSeleccionado!: Servicios; // ! => toma valores vacios
 
 
@@ -30,17 +30,18 @@ export class TableComponent {
   */
   servicio = new FormGroup({
     nombreServicio: new FormControl('', Validators.required),
-    costo: new FormControl('', Validators.required),
+    costo: new FormControl(0, Validators.required),
     funcion: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
     alt: new FormControl('', Validators.required),
     stock: new FormControl (0, Validators.required)
   })
 
-  servicioEdit: any;
+
   constructor(public servicioCrud: CrudService) { }
 
   ngOnInit(): void {
+     // subscribe -> método de notificación de cambios (observable)
     this.servicioCrud.obtenerServicio().subscribe(servicio => {
       this.collectionServicios = servicio;
 
@@ -119,7 +120,7 @@ export class TableComponent {
     }
   }
 
-
+  // ELIMINAR PRODUCTOS
   // funcion vinculada al modal y boton de la tabla
   mostrarBorrar(servicioSeleccionado: Servicios) {
     this.modalVisibleServicio = true;

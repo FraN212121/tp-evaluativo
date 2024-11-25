@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&family=M+PLUS+1+Code:wght@100..700&display=swap');
-
 .container{
     display: flex;
     padding: 10px;
@@ -25,4 +24,3 @@ input:focus {
     font-family: "M PLUS 1 Code", monospace;
   }
   
-

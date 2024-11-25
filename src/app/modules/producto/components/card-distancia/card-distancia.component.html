@@ -1,1 +1,27 @@
-<p>card-distancia works!</p>
+<div class="container">
+    <div class="row">
+      <h1>Servicios a distancia:</h1>
+      <div class="col" *ngFor="let servicio of coleccionServicios">
+        <div class="contenido">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title class="texto-card">{{ servicio.nombreServicio }}</mat-card-title>
+              <mat-card-subtitle class="texto-card">{{ servicio.costo }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{ servicio.imagen }}" alt="Imagen del servicio">
+            <mat-card-content>
+              <p class="texto-card">{{ servicio.funcion }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <section>
+                <div class="example-button-row">
+                  <button mat-raised-button id="agregar">Agregar al carrito</button>
+                </div>
+              </section>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  

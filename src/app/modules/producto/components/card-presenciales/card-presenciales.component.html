@@ -1,1 +1,26 @@
-<p>card-presenciales works!</p>
+<div class="container">
+    <div class="row">
+        <h1>Servicios presenciales:</h1>
+        <div class="col" *ngFor="let servicio of coleccionServicios " >
+            <div class="contenido" >
+                <mat-card style="width:100% ; text-align: center; justify-content: center;  background-color: white;" class="example-card">
+                    <mat-card-header style="justify-content: center;">
+                        <mat-card-title class="texto-card">{{servicio.nombreServicio}}</mat-card-title>
+                        <mat-card-subtitle class="texto-card">{{servicio.costo}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="{{servicio.imagen}}" alt="fotos servicios">
+                    <mat-card-content>
+                        <p class="texto-card">{{servicio.funcion}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <section>
+                            <div class="example-button-row" id="botonazo">
+                                <button mat-raised-button  id="agregar">Agregar al carrito</button>
+                            </div>
+                        </section>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div> 

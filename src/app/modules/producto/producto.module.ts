@@ -13,6 +13,7 @@ import { ServPresencialesComponent } from './pages/serv-presenciales/serv-presen
 import { CardComponent } from './components/card/card.component';
 import { CardDistanciaComponent } from './components/card-distancia/card-distancia.component';
 import { CardPresencialesComponent } from './components/card-presenciales/card-presenciales.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { CardPresencialesComponent } from './components/card-presenciales/card-p
     ProductoRoutingModule,
     MatCardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ServiciosComponent,

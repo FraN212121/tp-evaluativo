@@ -12,14 +12,12 @@
   <!-- Inicio de la pagina -->
   <button mat-button id="menuInicio" routerLink="/inicio">Inicio</button>
 
-  <!-- Productos
   <button mat-button [matMenuTriggerFor]="servicios" id="menuServicios">Servicios</button>
   <mat-menu #servicios="matMenu">
-    <button mat-menu-item routerLink="/card">Servicios presenciales.</button>
-    <button mat-menu-item routerLink="/card-distancia">Servicios a distancia.</button>
+    <button mat-menu-item routerLink="/serv-presenciales">Servicios presenciales.</button>
+    <button mat-menu-item routerLink="/serv-distancia">Servicios a distancia.</button>
   </mat-menu>
- -->
- <button mat-button routerLink="/servicios">Servicios</button>
+ 
 
   <!-- Contacto -->
   <button mat-button routerLink="/contacto">Contacto</button>
@@ -40,7 +38,7 @@
   </mat-menu>
 
   <!-- Carrito -->
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <button mat-icon-button class="example-icon favorite-icon" routerLink="/carrito" aria-label="Example icon-button with heart icon">
     <mat-icon>shopping_cart</mat-icon>
   </button>
 
